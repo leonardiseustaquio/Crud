@@ -1,0 +1,210 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #eef2ff, #f8fafc);
+  color: #1e293b;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.2rem;
+  color: #1e3a8a;
+  letter-spacing: 0.5px;
+}
+
+body > input,
+body > button {
+  margin: 8px 6px;
+}
+
+input {
+  padding: 12px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  outline: none;
+  font-size: 15px;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+  transition: all 0.25s ease;
+}
+
+input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+button {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 12px;
+  background: #2563eb;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 14px rgba(37, 99, 235, 0.18);
+}
+
+button:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+#search {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  margin: 20px auto 25px auto;
+}
+
+table {
+  width: 100%;
+  max-width: 950px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background: #ffffff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+thead {
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: white;
+}
+
+th,
+td {
+  padding: 16px;
+  text-align: left;
+}
+
+th {
+  font-size: 15px;
+  letter-spacing: 0.3px;
+}
+
+tbody tr {
+  border-bottom: 1px solid #e2e8f0;
+  transition: background 0.2s ease;
+}
+
+tbody tr:hover {
+  background: #f8fafc;
+}
+
+tbody tr:last-child {
+  border-bottom: none;
+}
+
+td button {
+  margin-right: 8px;
+  padding: 9px 14px;
+  font-size: 13px;
+  border-radius: 10px;
+}
+
+td button:first-child {
+  background: #0f766e;
+  box-shadow: 0 6px 14px rgba(15, 118, 110, 0.18);
+}
+
+td button:first-child:hover {
+  background: #0d5c56;
+}
+
+td button:last-child {
+  background: #dc2626;
+  box-shadow: 0 6px 14px rgba(220, 38, 38, 0.18);
+}
+
+td button:last-child:hover {
+  background: #b91c1c;
+}
+
+body > button:last-of-type {
+  display: block;
+  margin: 25px auto 0 auto;
+  background: #7c3aed;
+  box-shadow: 0 6px 14px rgba(124, 58, 237, 0.2);
+}
+
+body > button:last-of-type:hover {
+  background: #6d28d9;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 25px 12px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  input,
+  button {
+    width: 100%;
+    margin: 8px 0;
+  }
+
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+    width: 100%;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tbody tr {
+    background: #fff;
+    margin-bottom: 14px;
+    border-radius: 14px;
+    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
+    padding: 10px;
+  }
+
+  td {
+    padding: 10px;
+    border: none;
+    position: relative;
+  }
+
+  td::before {
+    font-weight: 700;
+    display: block;
+    margin-bottom: 4px;
+    color: #334155;
+  }
+
+  td:nth-child(1)::before {
+    content: "Nombre";
+  }
+
+  td:nth-child(2)::before {
+    content: "Correo";
+  }
+
+  td:nth-child(3)::before {
+    content: "Acciones";
+  }
+}
