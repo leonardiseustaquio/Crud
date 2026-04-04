@@ -58,7 +58,10 @@ function clearForm() {
 
 function searchUsers() {
   const query = document.getElementById("search").value.toLowerCase();
-  const filtered = users.filter(user => user.name.toLowerCase().includes(query));
+  const filtered = users.filter(user =>
+  user.name.toLowerCase().includes(query) ||
+  user.email.toLowerCase().includes(query)
+);
   renderTable(filtered);
 }
 
