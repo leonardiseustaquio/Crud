@@ -20,8 +20,23 @@ function renderTable(data = users) {
 function addUser() {
   const name = document.getElementById("name").value.trim();
   const email = document.getElementById("email").value.trim();
+
   if (!name || !email) {
     alert("Todos los campos son obligatorios.");
+    return;
+  }
+
+  if (!email.includes("@") || !email.includes(".")) {
+    alert("Ingrese un correo electrónico válido.");
+    return;
+  }
+
+  const duplicateUser = users.some((user, index) => {
+    return user.email.toLowerCase() === email.toLowerCase() && index !== editingIndex;
+  });
+
+  if (duplicateUser) {
+    alert("Este correo ya está registrado.");
     return;
   }
 
@@ -37,20 +52,6 @@ function addUser() {
   renderTable();
 }
 
-function editUser(index) {
-  document.getElementById("name").value = users[index].name;
-  document.getElementById("email").value = users[index].email;
-  editingIndex = index;
-}
-
-function deleteUser(index) {
-  if (confirm("¿Estás seguro de eliminar este usuario?")) {
-    users.splice(index, 1);
-    localStorage.setItem("users", JSON.stringify(users));
-    renderTable();
-  }
-}
-
 function clearForm() {
   document.getElementById("name").value = "";
   document.getElementById("email").value = "";
@@ -58,7 +59,10 @@ function clearForm() {
 
 function searchUsers() {
   const query = document.getElementById("search").value.toLowerCase();
-  const filtered = users.filter(user => user.name.toLowerCase().includes(query));
+  const filtered = users.filter(user =>
+  user.name.toLowerCase().includes(query) ||
+  user.email.toLowerCase().includes(query)
+);
   renderTable(filtered);
 }
 
