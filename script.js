@@ -22,7 +22,7 @@ function addUser() {
   const email = document.getElementById("email").value.trim();
 
   if (!name || !email) {
-    alert("Todos los campos son obligatorios.");
+    alert("Por favor complete todos los campos.");
     return;
   }
 
